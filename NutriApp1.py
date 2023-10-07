@@ -96,5 +96,5 @@ with st.form("user_input_form"):
         st.write("## Recomendações:")
         st.write(recommendations)
         input_text=promptbase+str(list(reasons.items()))
-        generate_response(input_text):
+        generate_response(input_text)
         
