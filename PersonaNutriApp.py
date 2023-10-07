@@ -1,9 +1,7 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
-    # Esta função deve ser expandida com lógica específica para analisar as respostas e gerar recomendações.
     persona = "Persona básica baseada nas respostas fornecidas."
     recommendations = "Recomendações personalizadas baseadas nas respostas fornecidas."
     return persona, recommendations
@@ -24,13 +22,13 @@ with st.form("user_input_form"):
     
     st.write("## Avalie os seguintes motivos para abandonar o acompanhamento nutricional em uma escala de 1 a 5:")
     reasons = {
-        "Falta de Comprometimento Pessoal": st.slider("Falta de Comprometimento Pessoal:", 1, 5, 3),
-        "Expectativas Irrealistas": st.slider("Expectativas Irrealistas:", 1, 5, 3),
-        "Dificuldade de Adaptação": st.slider("Dificuldade de Adaptação:", 1, 5, 3),
-        "Falta de Suporte Social": st.slider("Falta de Suporte Social:", 1, 5, 3),
-        "Custos Financeiros": st.slider("Custos Financeiros:", 1, 5, 3),
-        "Impaciência": st.slider("Impaciência:", 1, 5, 3),
-        "Falta de Acompanhamento Personalizado": st.slider("Falta de Acompanhamento Personalizado:", 1, 5, 3),
+        "Falta de Comprometimento Pessoal": st.selectbox("Falta de Comprometimento Pessoal:", [1, 2, 3, 4, 5]),
+        "Expectativas Irrealistas": st.selectbox("Expectativas Irrealistas:", [1, 2, 3, 4, 5]),
+        "Dificuldade de Adaptação": st.selectbox("Dificuldade de Adaptação:", [1, 2, 3, 4, 5]),
+        "Falta de Suporte Social": st.selectbox("Falta de Suporte Social:", [1, 2, 3, 4, 5]),
+        "Custos Financeiros": st.selectbox("Custos Financeiros:", [1, 2, 3, 4, 5]),
+        "Impaciência": st.selectbox("Impaciência:", [1, 2, 3, 4, 5]),
+        "Falta de Acompanhamento Personalizado": st.selectbox("Falta de Acompanhamento Personalizado:", [1, 2, 3, 4, 5]),
     }
     submit_button = st.form_submit_button("Analisar Respostas")
 
@@ -42,7 +40,6 @@ if submit_button:
     for reason, value in reasons.items():
         st.write(f"{reason}: {value}")
     
-    # Analisando as respostas e gerando recomendações (a lógica aqui deve ser expandida conforme necessário)
     persona, recommendations = analyze_answers({
         "name": name,
         "age": age,
@@ -57,6 +54,8 @@ if submit_button:
     st.write("## Recomendações:")
     st.write(recommendations)
     
+    # Gerando um gráfico para visualizar as avaliações dos motivos de abandono usando a funcionalidade nativa de gráficos do Streamlit
+    st.bar_chart(data=reasons, height=400)
 
 
 
