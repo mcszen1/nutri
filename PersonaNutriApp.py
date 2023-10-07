@@ -1,6 +1,3 @@
-# Atualizando o código do aplicativo Streamlit para incluir as melhorias solicitadas
-
-streamlit_code_updated = """
 import streamlit as st
 import matplotlib.pyplot as plt
 
@@ -60,13 +57,6 @@ if submit_button:
     st.write("## Recomendações:")
     st.write(recommendations)
     
-    # Gerando um gráfico para visualizar as avaliações dos motivos de abandono
-    fig, ax = plt.subplots()
-    ax.bar(reasons.keys(), reasons.values())
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Avaliação")
-    plt.title("Avaliações para os Motivos de Abandono")
-    st.pyplot(fig)
-"""
+
 
 
