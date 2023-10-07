@@ -21,7 +21,8 @@ Considere para a análise os dados sobre os motivos principais que tem feito a p
 
 openai_api_key = st.text_input('OpenAI API Key', type='password')
 def generate_response(input_text):
-    llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
+    model_name = 'gpt-3.5-turbo-16k'
+    llm = OpenAI(temperature=0.7, model_name=model_name, openai_api_key=openai_api_key)
     st.info(llm(input_text))
 
 # Função para analisar as respostas e gerar recomendações
