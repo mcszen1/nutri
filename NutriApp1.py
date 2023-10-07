@@ -11,7 +11,7 @@ Desenvolvimento de estratégias eficazes: Com personas, as empresas podem elabor
 Comunicação mais eficaz: A compreensão das personas permite que as empresas falem a língua de seus clientes e se comuniquem de maneira mais eficaz, aumentando a probabilidade de engajamento e conversão.
 Avaliação de resultados: As personas também são úteis na avaliação do desempenho das campanhas de marketing, pois permitem que as empresas comparem o desempenho real com as expectativas em relação a grupos demográficos específicos.
 A partir desses dados você deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona  : 
-a) Definição do problema que a persona tem ; 
+a) Definição do problema que a persona tem a partir dos fatores indicados em [str(list(reasons.items()))], considerando os indices númericos para definição dos mais importantes;
 b) Descrição das dores ou fatores que lhe incomodam por conta deste problema ; 
 c) o OBJETIVO da persona diante do problema 
 d)  o gatilho que disparou a persona a buscar uma solução e) as barreiras que a persona considera que atrapalham a solução do problema ; 
