@@ -35,6 +35,9 @@ def analyze_answers(responses):
     recommendations = "Recomendações personalizadas baseadas nas respostas fornecidas."
     return persona, recommendations
 
+# Logo
+
+st.image("LogoNutriJansen1.jpg")
 # Título do Aplicativo
 st.title('CONQUISTE COM NUTRI JANSEN')
 
