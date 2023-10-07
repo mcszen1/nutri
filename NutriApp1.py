@@ -39,7 +39,7 @@ def analyze_answers(responses):
 
 st.image("LogoNutriJansen1.jpg")
 # Título do Aplicativo
-st.title('CONQUISTE COM NUTRI JANSEN')
+st.title('CONQUISTE UMA VIDA SAUDÁVEL')
 
 # Introdução/Descrição do Aplicativo
 st.header("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
