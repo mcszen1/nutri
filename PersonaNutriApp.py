@@ -42,7 +42,7 @@ with st.form("user_input_form"):
     
     # Adicionando uma opção de botão de rádio para cada motivo e organizando-os horizontalmente
     for reason in reason_list:
-        reasons[reason] = st.radio(reason, options, horizontal=True, help="Avalie dando uma nota de 1 a 5")
+        reasons[reason] = st.radio(reason, options, help="Avalie dando uma nota de 1 a 5")
     
     submit_button = st.form_submit_button("Analisar Respostas")
 
