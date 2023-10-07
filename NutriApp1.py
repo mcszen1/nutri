@@ -24,7 +24,7 @@ Inicie sempre como se estivesse contanto uma história sobre a persona usando o 
 """
 
 #openai_api_key = st.text_input('OpenAI API Key', type='password')
-openai_api_key = 'OpenAI API Key'
+openai_api_key = 'OpenAI_API_Key'
 def generate_response(input_text):
     model_name = 'gpt-3.5-turbo-16k'
     llm = OpenAI(temperature=0.7, model_name=model_name, openai_api_key=openai_api_key)
