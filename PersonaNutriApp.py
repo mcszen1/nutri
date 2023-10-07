@@ -22,15 +22,43 @@ with st.form("user_input_form"):
     profession = st.text_input("Profissão:", "")
     
     st.write("## Avalie os seguintes motivos para abandonar o acompanhamento nutricional em uma escala de 1 a 5:")
-    reasons = {
-        "Falta de Comprometimento Pessoal": st.selectbox("Falta de Comprometimento Pessoal:", [1, 2, 3, 4, 5]),
-        "Expectativas Irrealistas": st.selectbox("Expectativas Irrealistas:", [1, 2, 3, 4, 5]),
-        "Dificuldade de Adaptação": st.selectbox("Dificuldade de Adaptação:", [1, 2, 3, 4, 5]),
-        "Falta de Suporte Social": st.selectbox("Falta de Suporte Social:", [1, 2, 3, 4, 5]),
-        "Custos Financeiros": st.selectbox("Custos Financeiros:", [1, 2, 3, 4, 5]),
-        "Impaciência": st.selectbox("Impaciência:", [1, 2, 3, 4, 5]),
-        "Falta de Acompanhamento Personalizado": st.selectbox("Falta de Acompanhamento Personalizado:", [1, 2, 3, 4, 5]),
-    }
+    
+    # Lista de razões para serem avaliadas
+    reason_list = [
+        "Falta de Comprometimento Pessoal",
+        "Expectativas Irrealistas",
+        "Dificuldade de Adaptação",
+        "Falta de Suporte Social",
+        "Custos Financeiros",
+        "Impaciência",
+        "Falta de Acompanhamento Personalizado"
+    ]
+    
+    # Inicializando um dicionário para armazenar as respostas
+    reasons = {}
+    
+    # Opções para avaliação
+    options = [1, 2, 3, 4, 5]
+    
+    # Adicionando uma opção de botão de rádio para cada motivo e organizando-os horizontalmente
+    for reason in reason_list:
+        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1.5])
+        with col1:
+            v1 = st.radio(reason, options, index=None, key=reason+"_1", help="Avalie dando uma nota de 1 a 5")
+        with col2:
+            v2 = st.radio("", options, index=None, key=reason+"_2")
+        with col3:
+            v3 = st.radio("", options, index=None, key=reason+"_3")
+        with col4:
+            v4 = st.radio("", options, index=None, key=reason+"_4")
+        with col5:
+            v5 = st.radio("", options, index=None, key=reason+"_5")
+        
+        # Salvando a resposta selecionada no dicionário de respostas
+        for v in [v1, v2, v3, v4, v5]:
+            if v:
+                reasons[reason] = v
+    
     submit_button = st.form_submit_button("Analisar Respostas")
 
 # Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
@@ -40,6 +68,10 @@ if submit_button:
     st.write("Avaliações para os motivos de abandono:")
     for reason, value in reasons.items():
         st.write(f"{reason}: {value}")
+
+    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
+    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
+    st.bar_chart(reasons_df.set_index('Reason'), height=400)
     
     persona, recommendations = analyze_answers({
         "name": name,
@@ -55,6 +87,5 @@ if submit_button:
     st.write("## Recomendações:")
     st.write(recommendations)
     
-    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
-    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
-    st.bar_chart(reasons_df.set_index('Reason'), height=400)
+
+
