@@ -42,22 +42,7 @@ with st.form("user_input_form"):
     
     # Adicionando uma opção de botão de rádio para cada motivo e organizando-os horizontalmente
     for reason in reason_list:
-        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1.5])
-        with col1:
-            v1 = st.radio(reason, options, key=reason+"_1", help="Avalie dando uma nota de 1 a 5")
-        with col2:
-            v2 = st.radio("", options, key=reason+"_2")
-        with col3:
-            v3 = st.radio("", options, key=reason+"_3")
-        with col4:
-            v4 = st.radio("", options, key=reason+"_4")
-        with col5:
-            v5 = st.radio("", options, key=reason+"_5")
-        
-        # Salvando a resposta selecionada no dicionário de respostas
-        for v in [v1, v2, v3, v4, v5]:
-            if v:
-                reasons[reason] = v
+        reasons[reason] = st.radio(reason, options, help="Avalie dando uma nota de 1 a 5")
     
     submit_button = st.form_submit_button("Analisar Respostas")
 
