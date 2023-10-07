@@ -59,7 +59,7 @@ with st.form("user_input_form"):
             if v:
                 reasons[reason] = v
     
-    submit_button = st.form_submit_button("Analisar Respostas")
+    submit_button = st.form_submit_button("Analise Respostas")
 
 # Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
 if submit_button:
