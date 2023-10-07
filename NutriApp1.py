@@ -10,7 +10,7 @@ Melhoria na segmentação: As personas permitem que as empresas segmentem suas c
 Desenvolvimento de estratégias eficazes: Com personas, as empresas podem elaborar estratégias de marketing mais eficazes, como a escolha dos canais de marketing certos, a criação de mensagens persuasivas e a definição de metas específicas.
 Comunicação mais eficaz: A compreensão das personas permite que as empresas falem a língua de seus clientes e se comuniquem de maneira mais eficaz, aumentando a probabilidade de engajamento e conversão.
 Avaliação de resultados: As personas também são úteis na avaliação do desempenho das campanhas de marketing, pois permitem que as empresas comparem o desempenho real com as expectativas em relação a grupos demográficos específicos.
-A partir desses dados você deve escolher um nome para a persona e com base neste nome definir : 
+A partir desses dados você deve definir os seguintes itens : 
 a) Definição do problema que a persona tem ; 
 b) Descrição das dores ou fatores que lhe incomodam por conta deste problema ; 
 c) o OBJETIVO da persona diante do problema 
