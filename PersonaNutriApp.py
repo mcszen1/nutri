@@ -68,10 +68,6 @@ if submit_button:
     st.write("Avaliações para os motivos de abandono:")
     for reason, value in reasons.items():
         st.write(f"{reason}: {value}")
-
-    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
-    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
-    st.bar_chart(reasons_df.set_index('Reason'), height=400)
     
     persona, recommendations = analyze_answers({
         "name": name,
@@ -87,5 +83,8 @@ if submit_button:
     st.write("## Recomendações:")
     st.write(recommendations)
     
+    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
+    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
+    st.bar_chart(reasons_df.set_index('Reason'), height=400)
 
 
