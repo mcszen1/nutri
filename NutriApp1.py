@@ -41,7 +41,7 @@ st.title('CONQUISTE COM NUTRI JANSEN')
 # Introdução/Descrição do Aplicativo
 st.header("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
 st.write("Se o acompanhamento nutricional que fez antes não deu certo, quero te conhecer melhor e também te ajudar a retomar sua caminhada para uma vida mais saudável.")
-
+st.write("Nossa jornada juntos começa agora. Avalie a persona e venha me falar mais sobre você em @jv_nutrijansen")
 # Formulário para coletar informações do usuário
 with st.form("user_input_form"):
     st.write("## Por favor, preencha as informações abaixo:")
