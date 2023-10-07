@@ -19,7 +19,7 @@ f) os benefícios que a persona busca na solução que procura
 Considere para a análise os dados sobre os motivos principais que tem feito a persona abandonar o acompanhamento nutricional utilizando os motivos e o indice maior ou menor de importância que ela relatou definidos em:
 """
 
-openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+openai_api_key = st.text_input('OpenAI API Key', type='password')
 def generate_response(input_text):
     llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
     st.info(llm(input_text))
