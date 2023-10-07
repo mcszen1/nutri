@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
@@ -54,8 +55,6 @@ if submit_button:
     st.write("## Recomendações:")
     st.write(recommendations)
     
-    # Gerando um gráfico para visualizar as avaliações dos motivos de abandono usando a funcionalidade nativa de gráficos do Streamlit
-    st.bar_chart(data=reasons, height=400)
-
-
-
+    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
+    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
+    st.bar_chart(reasons_df.set_index('Reason'), height=400)
