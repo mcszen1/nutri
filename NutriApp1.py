@@ -38,9 +38,9 @@ def analyze_answers(responses):
 
 # Logo
 
-st.image("LogoNutriJansen1.jpg",use_column_width="auto")
+st.image("LogoNutriJansen1.jpg",use_column_width="False")
 # Título do Aplicativo
-st.title('   CONQUISTE UMA VIDA SAUDÁVEL')
+st.title('CONQUISTE UMA VIDA SAUDÁVEL')
 
 # Introdução/Descrição do Aplicativo
 st.header("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
