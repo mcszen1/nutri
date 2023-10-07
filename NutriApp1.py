@@ -38,7 +38,7 @@ def analyze_answers(responses):
 
 # Logo
 
-st.image("LogoNutriJansen1.jpg")
+st.image("LogoNutriJansen1.jpg",use_column_width="auto")
 # Título do Aplicativo
 st.title('CONQUISTE UMA VIDA SAUDÁVEL')
 
