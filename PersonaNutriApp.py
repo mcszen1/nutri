@@ -1,5 +1,8 @@
+# Atualizando o código do aplicativo Streamlit para incluir as melhorias solicitadas
 
+streamlit_code_updated = """
 import streamlit as st
+import matplotlib.pyplot as plt
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
@@ -21,22 +24,26 @@ with st.form("user_input_form"):
     age = st.number_input("Idade:", min_value=1, max_value=100)
     gender = st.selectbox("Sexo:", options=["", "Feminino", "Masculino", "Outro"])
     profession = st.text_input("Profissão:", "")
-    reasons = st.multiselect("Motivos para Abandonar o Acompanhamento Anterior:",
-                             options=["Falta de Comprometimento Pessoal",
-                                      "Expectativas Irrealistas",
-                                      "Dificuldade de Adaptação",
-                                      "Falta de Suporte Social",
-                                      "Custos Financeiros",
-                                      "Impaciência",
-                                      "Falta de Acompanhamento Personalizado"],
-                             default=None)
+    
+    st.write("## Avalie os seguintes motivos para abandonar o acompanhamento nutricional em uma escala de 1 a 5:")
+    reasons = {
+        "Falta de Comprometimento Pessoal": st.slider("Falta de Comprometimento Pessoal:", 1, 5, 3),
+        "Expectativas Irrealistas": st.slider("Expectativas Irrealistas:", 1, 5, 3),
+        "Dificuldade de Adaptação": st.slider("Dificuldade de Adaptação:", 1, 5, 3),
+        "Falta de Suporte Social": st.slider("Falta de Suporte Social:", 1, 5, 3),
+        "Custos Financeiros": st.slider("Custos Financeiros:", 1, 5, 3),
+        "Impaciência": st.slider("Impaciência:", 1, 5, 3),
+        "Falta de Acompanhamento Personalizado": st.slider("Falta de Acompanhamento Personalizado:", 1, 5, 3),
+    }
     submit_button = st.form_submit_button("Analisar Respostas")
 
 # Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
 if submit_button:
     st.write(f"## Respostas de {name}:")
     st.write(f"Idade: {age}, Sexo: {gender}, Profissão: {profession}")
-    st.write(f"Motivos para Abandonar o Acompanhamento Anterior: {', '.join(reasons) if reasons else 'Nenhum motivo selecionado'}")
+    st.write("Avaliações para os motivos de abandono:")
+    for reason, value in reasons.items():
+        st.write(f"{reason}: {value}")
     
     # Analisando as respostas e gerando recomendações (a lógica aqui deve ser expandida conforme necessário)
     persona, recommendations = analyze_answers({
@@ -52,3 +59,19 @@ if submit_button:
     st.write(persona)
     st.write("## Recomendações:")
     st.write(recommendations)
+    
+    # Gerando um gráfico para visualizar as avaliações dos motivos de abandono
+    fig, ax = plt.subplots()
+    ax.bar(reasons.keys(), reasons.values())
+    plt.xticks(rotation=45, ha="right")
+    plt.ylabel("Avaliação")
+    plt.title("Avaliações para os Motivos de Abandono")
+    st.pyplot(fig)
+"""
+
+# Salvando o código atualizado em um arquivo .py para que o usuário possa baixá-lo e utilizá-lo
+code_file_path_updated = '/mnt/data/streamlit_app_updated.py'
+with open(code_file_path_updated, 'w', encoding='utf-8') as file:
+    file.write(streamlit_code_updated)
+
+code_file_path_updated
