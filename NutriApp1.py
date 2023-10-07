@@ -38,7 +38,7 @@ def analyze_answers(responses):
 
 # Logo
 
-st.image("logonutri1.jpg",use_column_width="Auto")
+st.image("logonutri1.jpg",use_column_width="False")
 # Título do Aplicativo
 st.title('CONQUISTE UMA VIDA SAUDÁVEL')
 
