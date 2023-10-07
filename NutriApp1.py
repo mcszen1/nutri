@@ -100,6 +100,6 @@ with st.form("user_input_form"):
         st.write("## Recomendações:")
         st.write(recommendations)
         comple=str(list(reasons.items()))
-        input_text=promptbase+name+age+gender+profession+comple
+        input_text=promptbase+name+str(age)+gender+profession+comple
         generate_response(input_text)
         
