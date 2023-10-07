@@ -13,7 +13,8 @@ estes pacientes a abandonarem o acompanhamento nutricional cada um com um nível
 Com esse material deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona e os outros dados para criá-la com mais
 precisão de forma a que o paciente que forneceu os dados se sinta representado por ela: 
 a) Definição do problema que a persona tem a partir dos fatores indicados em [comple], considerando os indices númericos para definição dos mais importantes;
-b) Descrição das dores ou fatores que incomodam em função dos problemas que relatou; 
+b) Descrição dos fatores que incomodam a persona em função dos problemas que relatou, observe que cada fator tem um índice entre 1 e 5 que representam uma escala de maior ou menor importância,
+na sua resposta nesta tarefa, considere os pesos diferentes e desenvolve seus arguementos proprocionalmente a maior ou menor importância que os valores indicados de 1 a 5 vão mostrar; 
 c) o OBJETIVOs da persona diante do problema 
 d) possíveis gatilhos que dispararam na persona a vontade de buscar uma solução 
 e) uma lista de possíveis procedimentos para que a pessoa possa enfrentar e minimizar os problemas que relatou em [comple]
