@@ -39,7 +39,7 @@ def analyze_answers(responses):
 st.title('CONQUISTE COM NUTRI JANSEN')
 
 # Introdução/Descrição do Aplicativo
-st.write("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
+st.header("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
 st.write("Se o acompanhamento nutricional que fez antes não deu certo, quero te conhecer melhor e também te ajudar a retomar sua caminhada para uma vida mais saudável.")
 
 # Formulário para coletar informações do usuário
