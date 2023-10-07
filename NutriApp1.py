@@ -2,22 +2,24 @@ from langchain.llms import OpenAI
 import streamlit as st
 import pandas as pd
 promptbase="""
-No marketing digital, o conceito de "persona" refere-se a uma representação fictícia do público-alvo de uma empresa ou marca. Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. A criação de personas ajuda as empresas a entenderem melhor quem são seus potenciais clientes e como podem direcionar suas estratégias de marketing de maneira mais eficaz.
-Aqui estão alguns pontos-chave sobre o conceito de persona no marketing digital e por que ele é importante:
-Compreensão do público-alvo: A criação de personas ajuda as empresas a obterem uma compreensão mais profunda de quem são seus clientes ideais, incluindo informações como idade, sexo, ocupação, interesses, hábitos de compra e muito mais.
-Personalização de conteúdo: Com personas bem definidas, as empresas podem criar conteúdo mais relevante e direcionado que ressoa com seu público-alvo. Isso inclui a criação de mensagens, campanhas e produtos/serviços adaptados às necessidades e preferências específicas de cada persona.
-Melhoria na segmentação: As personas permitem que as empresas segmentem suas campanhas de marketing de forma mais precisa. Isso ajuda a economizar recursos, concentrando-se nas pessoas que têm maior probabilidade de se tornarem clientes.
-Desenvolvimento de estratégias eficazes: Com personas, as empresas podem elaborar estratégias de marketing mais eficazes, como a escolha dos canais de marketing certos, a criação de mensagens persuasivas e a definição de metas específicas.
-Comunicação mais eficaz: A compreensão das personas permite que as empresas falem a língua de seus clientes e se comuniquem de maneira mais eficaz, aumentando a probabilidade de engajamento e conversão.
-Avaliação de resultados: As personas também são úteis na avaliação do desempenho das campanhas de marketing, pois permitem que as empresas comparem o desempenho real com as expectativas em relação a grupos demográficos específicos.
-A partir desses dados você deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona  : 
+No marketing digital, o conceito de "persona" refere-se a uma representação fictícia do público-alvo de uma empresa ou marca ou serviço. 
+Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. 
+A criação de personas ajuda as empresas a entenderem melhor quem são seus potenciais clientes e como podem direcionar suas estratégias de marketing de maneira mais eficaz.
+Você é um nutricionista e quer conhecer melhor seus possíveis novos pacientes através de alguns dados que eles vão fornecer e que vou descrever a seguir.
+Com esses dados sua missão será desenvolver e descrever uma persona que resuma os problemas que enfrentam.
+Você vai realizar uma lista de tarefas que vou descrever abaixo em indiretamente , em todas vai sempre incentiver e destacar a importância do acompanhamento do profissional nutricionista nas atividades.
+A partir desses dados você terá informações básicas como nome [name] , idade [age], gênero [gender] e profissão [profession]. Além disso você terá também uma lista com os principais fatores que tem levado 
+estes pacientes a abandonarem o acompanhamento nutricional cada um com um nível de importãncia descritos em [comple] . 
+Com esse material deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona e os outros dados para criá-la com mais
+precisão de forma a que o paciente que forneceu os dados se sinta representado por ela: 
 a) Definição do problema que a persona tem a partir dos fatores indicados em [comple], considerando os indices númericos para definição dos mais importantes;
 b) Descrição das dores ou fatores que incomodam em função dos problemas que relatou; 
 c) o OBJETIVOs da persona diante do problema 
-d)  o gatilho que disparou a persona a buscar uma solução 
+d) possíveis gatilhos que dispararam na persona a vontade de buscar uma solução 
 e) uma lista de possíveis procedimentos para que a pessoa possa enfrentar e minimizar os problemas que relatou em [comple]
 f) os benefícios que a persona busca na solução que procura 
-Em todas as respostas não precisa repetir a a tarefa que está completando. Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome que ela indicou .
+Formate suas respostas usando apenas os tópicos de cada tarefa [Problema, DORES, OBJETIVOS, GATILHOS, PROCEDIMENTOS PARA AJUDAR, BENEFÍCIOS]. 
+Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome [name] que ela indicou, bem como seus outros dados pessoais coletados.
 """
 
 openai_api_key = st.text_input('OpenAI API Key', type='password')
@@ -98,6 +100,6 @@ with st.form("user_input_form"):
         st.write("## Recomendações:")
         st.write(recommendations)
         comple=str(list(reasons.items()))
-        input_text=promptbase+comple
+        input_text=promptbase+name+age+gender+profession+comple
         generate_response(input_text)
         
