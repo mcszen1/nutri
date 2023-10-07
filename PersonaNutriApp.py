@@ -44,47 +44,46 @@ with st.form("user_input_form"):
     for reason in reason_list:
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1.5])
         with col1:
-            v1 = st.radio(reason, options, index=None, key=reason+"_1", help="Avalie dando uma nota de 1 a 5")
+            v1 = st.radio(reason, options, key=reason+"_1", help="Avalie dando uma nota de 1 a 5")
         with col2:
-            v2 = st.radio("", options, index=None, key=reason+"_2")
+            v2 = st.radio("", options, key=reason+"_2")
         with col3:
-            v3 = st.radio("", options, index=None, key=reason+"_3")
+            v3 = st.radio("", options, key=reason+"_3")
         with col4:
-            v4 = st.radio("", options, index=None, key=reason+"_4")
+            v4 = st.radio("", options, key=reason+"_4")
         with col5:
-            v5 = st.radio("", options, index=None, key=reason+"_5")
+            v5 = st.radio("", options, key=reason+"_5")
         
         # Salvando a resposta selecionada no dicionário de respostas
         for v in [v1, v2, v3, v4, v5]:
             if v:
                 reasons[reason] = v
     
-    submit_button = st.form_submit_button("Analise Respostas")
+    submit_button = st.form_submit_button("Analisar Respostas")
 
-# Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
-if submit_button:
-    st.write(f"## Respostas de {name}:")
-    st.write(f"Idade: {age}, Sexo: {gender}, Profissão: {profession}")
-    st.write("Avaliações para os motivos de abandono:")
-    for reason, value in reasons.items():
-        st.write(f"{reason}: {value}")
-    
-    persona, recommendations = analyze_answers({
-        "name": name,
-        "age": age,
-        "gender": gender,
-        "profession": profession,
-        "reasons": reasons
-    })
-    
-    # Apresentando a persona e as recomendações ao usuário
-    st.write("## Persona Criada:")
-    st.write(persona)
-    st.write("## Recomendações:")
-    st.write(recommendations)
-    
-    # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
-    reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
-    st.bar_chart(reasons_df.set_index('Reason'), height=400)
-
+    # Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
+    if submit_button:
+        st.write(f"## Respostas de {name}:")
+        st.write(f"Idade: {age}, Sexo: {gender}, Profissão: {profession}")
+        st.write("Avaliações para os motivos de abandono:")
+        for reason, value in reasons.items():
+            st.write(f"{reason}: {value}")
+        
+        persona, recommendations = analyze_answers({
+            "name": name,
+            "age": age,
+            "gender": gender,
+            "profession": profession,
+            "reasons": reasons
+        })
+        
+        # Apresentando a persona e as recomendações ao usuário
+        st.write("## Persona Criada:")
+        st.write(persona)
+        st.write("## Recomendações:")
+        st.write(recommendations)
+        
+        # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
+        reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
+        st.bar_chart(reasons_df.set_index('Reason'), height=400)
 
