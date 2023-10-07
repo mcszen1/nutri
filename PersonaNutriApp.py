@@ -40,10 +40,11 @@ with st.form("user_input_form"):
     # Opções para avaliação
     options = [1, 2, 3, 4, 5]
     
-    # Adicionando uma opção de botão de rádio para cada motivo e organizando-os horizontalmente
+    # Adicionando uma opção de botão de rádio para cada motivo com orientação horizontal
     for reason in reason_list:
-        reasons[reason] = st.radio(reason, options, help="Avalie dando uma nota de 1 a 5")
+        reasons[reason] = st.radio(reason, options, help="Avalie dando uma nota de 1 a 5", key=reason, index=2, horizontal=True)
     
+    # Adicionando o botão de envio no final do formulário
     submit_button = st.form_submit_button("Analisar Respostas")
 
     # Quando o usuário submeter o formulário, analise as respostas e apresente os resultados
@@ -71,4 +72,5 @@ with st.form("user_input_form"):
         # Convertendo o dicionário reasons em um DataFrame e gerando um gráfico de barras
         reasons_df = pd.DataFrame(list(reasons.items()), columns=['Reason', 'Value'])
         st.bar_chart(reasons_df.set_index('Reason'), height=400)
+
 
