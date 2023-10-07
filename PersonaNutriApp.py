@@ -69,9 +69,4 @@ if submit_button:
     st.pyplot(fig)
 """
 
-# Salvando o código atualizado em um arquivo .py para que o usuário possa baixá-lo e utilizá-lo
-code_file_path_updated = '/mnt/data/streamlit_app_updated.py'
-with open(code_file_path_updated, 'w', encoding='utf-8') as file:
-    file.write(streamlit_code_updated)
 
-code_file_path_updated
