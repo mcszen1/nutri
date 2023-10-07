@@ -11,12 +11,13 @@ Desenvolvimento de estratégias eficazes: Com personas, as empresas podem elabor
 Comunicação mais eficaz: A compreensão das personas permite que as empresas falem a língua de seus clientes e se comuniquem de maneira mais eficaz, aumentando a probabilidade de engajamento e conversão.
 Avaliação de resultados: As personas também são úteis na avaliação do desempenho das campanhas de marketing, pois permitem que as empresas comparem o desempenho real com as expectativas em relação a grupos demográficos específicos.
 A partir desses dados você deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona  : 
-a) Definição do problema que a persona tem a partir dos fatores indicados em [str(list(reasons.items()))], considerando os indices númericos para definição dos mais importantes;
-b) Descrição das dores ou fatores que lhe incomodam por conta deste problema ; 
-c) o OBJETIVO da persona diante do problema 
-d)  o gatilho que disparou a persona a buscar uma solução e) as barreiras que a persona considera que atrapalham a solução do problema ; 
+a) Definição do problema que a persona tem a partir dos fatores indicados em [comple], considerando os indices númericos para definição dos mais importantes;
+b) Descrição das dores ou fatores que incomodam em função dos problemas que relatou; 
+c) o OBJETIVOs da persona diante do problema 
+d)  o gatilho que disparou a persona a buscar uma solução 
+e) uma lista de possíveis procedimentos para que a pessoa possa enfrentar e minimizar os problemas que relatou em [comple]
 f) os benefícios que a persona busca na solução que procura 
-Considere para a análise os dados sobre os motivos principais que tem feito a persona abandonar o acompanhamento nutricional utilizando os motivos e o indice maior ou menor de importância que ela relatou definidos em:
+Em todas as respostas não precisa repetir a a tarefa que está completando. Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome que ela indicou .
 """
 
 openai_api_key = st.text_input('OpenAI API Key', type='password')
@@ -96,6 +97,7 @@ with st.form("user_input_form"):
         st.write(persona)
         st.write("## Recomendações:")
         st.write(recommendations)
-        input_text=promptbase+str(list(reasons.items()))
+        comple=str(list(reasons.items()))
+        input_text=promptbase+comple
         generate_response(input_text)
         
