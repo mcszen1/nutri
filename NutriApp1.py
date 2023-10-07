@@ -36,10 +36,11 @@ def analyze_answers(responses):
     return persona, recommendations
 
 # Título do Aplicativo
-st.title('Aplicativo de Acompanhamento Nutricional')
+st.title('CONQUISTE COM NUTRI JANSEN')
 
 # Introdução/Descrição do Aplicativo
-st.write("Este aplicativo visa ajudar a entender os desafios enfrentados durante o acompanhamento nutricional e fornecer recomendações personalizadas.")
+st.write("Faça essa auto-avaliação e crie uma persona que vai tentar representar a sua situação.") 
+st.write("Se o acompanhamento nutricional que fez antes não deu certo, quero te conhecer melhor e também te ajudar a retomar sua caminhada para uma vida mais saudável.")
 
 # Formulário para coletar informações do usuário
 with st.form("user_input_form"):
