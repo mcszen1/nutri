@@ -1,6 +1,7 @@
 from langchain.llms import OpenAI
 import streamlit as st
 import pandas as pd
+import os
 promptbase="""
 No marketing digital, o conceito de "persona" refere-se a uma representação fictícia do público-alvo de uma empresa ou marca ou serviço. 
 Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. 
