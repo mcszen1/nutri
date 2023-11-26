@@ -57,7 +57,8 @@ def generate_response(input_text):
   presence_penalty=0
 )
   
-  return response.choices[0].message
+  assistant_message = response.choices[0].message.content.strip()
+  return assistant_message
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
