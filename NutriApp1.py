@@ -37,7 +37,7 @@ os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 #openai_api_key=st.secrets["openai_api_key"]
 def generate_response(input_text):
     model_name = 'gpt-3.5-turbo-16k'
-    llm = OpenAI(temperature=0.7, model_name=model_name)
+    llm = OpenAI(model_name=model_name)
     st.info(llm(input_text))
 
 # Função para analisar as respostas e gerar recomendações
