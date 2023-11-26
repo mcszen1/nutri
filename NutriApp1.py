@@ -39,12 +39,23 @@ resposta=""
 def generate_response(input_text):
 
   response = client.chat.completions.create(
-    model="gpt-4-1106-preview",
-    messages=[
-      {"role": "system", "content": promptbase},
-      {"role": "user", "content": input_text}])
-  resposta=response.choices[0].message
-  return resposta
+  model="gpt-4",
+  messages=[
+    {
+      "role": "system",
+      "content": input_text
+    },
+    {
+      "role": "user",
+      "content": "Analise esse paciente e execute as tarefas que está programado para executar"
+    }
+  ],
+  temperature=0.8,
+  max_tokens=1024,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
@@ -124,5 +135,5 @@ with st.form("user_input_form"):
         comple=str(list(reasons.items()))
         input_text=promptbase+name+str(age)+gender+profession+comple
         generate_response(input_text)
-        st.write(resposta)
+
         
