@@ -43,7 +43,7 @@ def generate_response(input_text):
   messages=[
     {
       "role": "system",
-      "content": input_text
+      "content": "input_text"
     },
     {
       "role": "user",
