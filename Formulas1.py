@@ -1,7 +1,7 @@
 import streamlit as st
 
 def calcular_imc(peso, altura):
-    altura1 = altura_cm / 100  # Convertendo centímetros para metros
+    altura1 = altura / 100  # Convertendo centímetros para metros
     return peso / (altura1 ** 2)
 
 
