@@ -31,7 +31,7 @@ def calcular_necessidades_caloricas(tmb, nivel_atividade):
 def distribuicao_macronutrientes(calorias):
     # Aqui, você pode adicionar a lógica para calcular a distribuição de macronutrientes
     pass
-
+st.image("logonutri2.jpg",use_column_width="False")
 st.title('Aplicativo de Avaliação Nutricional')
 
 peso = st.number_input('Peso (kg)', min_value=0.0, format="%.2f")
