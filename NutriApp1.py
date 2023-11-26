@@ -43,11 +43,11 @@ def generate_response(input_text):
   messages=[
     {
       "role": "system",
-      "content": "input_text"
+      "content": "Você é um nutricionista e quer conhecer melhor seus possíveis novos pacientes através de alguns dados que eles vão fornecer"
     },
     {
       "role": "user",
-      "content": "Analise esse paciente e execute as tarefas que está programado para executar"
+      "content": input_text
     }
   ],
   temperature=0.8,
