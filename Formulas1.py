@@ -6,7 +6,7 @@ def calcular_imc(peso, altura):
 
 def calcular_tmb_harris_benedict(peso, altura, idade, sexo):
     if sexo == 'Masculino':
-        return 88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)
+        return 66 + (13.8 * peso) + (5 * altura) - (6.8 * idade)
     else:
         return 447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)
 
