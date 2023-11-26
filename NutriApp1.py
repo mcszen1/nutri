@@ -41,8 +41,7 @@ response = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
     {"role": "system", "content": promptbase},
-    {"role": "user", "content": input_text}]
-)
+    {"role": "user", "content": input_text}])
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
