@@ -38,6 +38,7 @@ peso = st.number_input('Peso (kg)', min_value=0.0, format="%.2f")
 altura = st.number_input('Altura (cm)', min_value=0.0, format="%.2f")
 idade = st.number_input('Idade', min_value=0, max_value=120, step=1)
 sexo = st.selectbox('Sexo', ['Masculino', 'Feminino'])
+lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
 
 formula_tmb = st.selectbox('Fórmula para TMB', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
 
@@ -49,7 +50,7 @@ if st.button('Calcular'):
     elif formula_tmb == 'Mifflin-St Jeor':
         tmb = calcular_tmb_mifflin_st_jeor(peso, altura, idade, sexo)
     elif formula_tmb in ['Cunningham', 'Tinsley']:
-        lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
+        
         if formula_tmb == 'Cunningham':
             tmb = calcular_tmb_cunningham(lean_body_mass)
         else:
