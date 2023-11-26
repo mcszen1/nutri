@@ -33,7 +33,7 @@ Inicie sempre como se estivesse contanto uma história sobre a persona usando o 
 """
 
 #openai_api_key = st.text_input('OpenAI API Key', type='password')
-os.environ["OPENAI_API_KEY"] == st.secrets["openai_api_key"]
+os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 #openai_api_key=st.secrets["openai_api_key"]
 def generate_response(input_text):
     model_name = 'gpt-3.5-turbo-16k'
