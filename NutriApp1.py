@@ -2,6 +2,14 @@ from langchain.llms import OpenAI
 import streamlit as st
 import pandas as pd
 import os
+from openai import OpenAI
+
+client = OpenAI()
+# defaults to getting the key using os.environ.get("OPENAI_API_KEY")
+# if you saved the key under a different environment variable name, you can do something like:
+# client = OpenAI(
+#   api_key=os.environ.get("CUSTOM_ENV_NAME"),
+# )
 promptbase="""
 No marketing digital, o conceito de "persona" refere-se a uma representação fictícia do público-alvo de uma empresa ou marca ou serviço. 
 Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. 
@@ -26,7 +34,7 @@ Inicie sempre como se estivesse contanto uma história sobre a persona usando o 
 
 #openai_api_key = st.text_input('OpenAI API Key', type='password')
 os.environ["OPENAI_API_KEY"] == st.secrets["openai_api_key"]
-openai_api_key=st.secrets["openai_api_key"]
+#openai_api_key=st.secrets["openai_api_key"]
 def generate_response(input_text):
     model_name = 'gpt-3.5-turbo-16k'
     llm = OpenAI(temperature=0.7, model_name=model_name, openai_api_key=openai_api_key)
