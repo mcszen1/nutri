@@ -38,7 +38,7 @@ resposta=""
 def generate_response(input_text):
 
   response = client.chat.completions.create(
-  model="gpt-4",
+  model="gpt-3.5-turbo-16k",
   messages=[
     {
       "role": "system",
@@ -49,7 +49,7 @@ def generate_response(input_text):
       "content": input_text
     }
   ],
-  temperature=0.8,
+  temperature=0.7,
   max_tokens=2048,
   top_p=1,
   frequency_penalty=0,
