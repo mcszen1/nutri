@@ -15,7 +15,6 @@ No marketing digital, o conceito de "persona" refere-se a uma representação fi
 Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. 
 A criação de personas ajuda as empresas a entenderem melhor quem são seus potenciais clientes e como podem direcionar suas estratégias de marketing de maneira mais eficaz.
 Você é um nutricionista e quer conhecer melhor seus possíveis novos pacientes através de alguns dados que eles vão fornecer e que vou descrever a seguir.
-Com esses dados sua missão será desenvolver e descrever uma persona que resuma os problemas que enfrentam.
 Você vai realizar uma lista de tarefas que vou descrever abaixo em indiretamente , em todas vai sempre incentiver e destacar a importância do acompanhamento do profissional nutricionista nas atividades.
 A partir desses dados você terá informações básicas como nome [name] , idade [age], gênero [gender] e profissão [profession]. Além disso você terá também uma lista com os principais fatores que tem levado 
 estes pacientes a abandonarem o acompanhamento nutricional cada um com um nível de importãncia descritos em [comple] . 
@@ -26,9 +25,9 @@ b) Descrição dos fatores que incomodam a persona em função dos problemas que
 na sua resposta nesta tarefa, considere os pesos diferentes e desenvolve seus arguementos proprocionalmente a maior ou menor importância que os valores indicados de 1 a 5 vão mostrar; 
 c) o OBJETIVOs da persona diante do problema 
 d) possíveis gatilhos que dispararam na persona a vontade de buscar uma solução 
-e) uma lista de possíveis procedimentos para que a pessoa possa enfrentar e minimizar os problemas que relatou em [comple]
-f) os benefícios que a persona busca na solução que procura 
-Formate suas respostas usando apenas os tópicos de cada tarefa [Problema, DORES, OBJETIVOS, GATILHOS, PROCEDIMENTOS PARA AJUDAR, BENEFÍCIOS]. 
+e) uma lista detlhada de possíveis procedimentos para que a pessoa possa enfrentar e minimizar cada um dos os problemas que relatou em [comple]
+f) os benefícios que a persona busca na solução que procura também indicando os ganhos a vitória sobre cada uma das dificuldades trará para ela
+Formate suas respostas usando apenas os tópicos de cada tarefa [PROBLEMAS, DORES, OBJETIVOS, GATILHOS, PROCEDIMENTOS PARA AJUDAR, BENEFÍCIOS]. 
 Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome [name] que ela indicou, bem como seus outros dados pessoais coletados.
 """
 
@@ -43,7 +42,10 @@ def generate_response(input_text):
   messages=[
     {
       "role": "system",
-      "content": "Você é um nutricionista e quer conhecer melhor seus possíveis novos pacientes através de alguns dados que eles vão fornecer"
+      "content": "Você é um nutricionista e vai analisar seus novos pacientes através de alguns dados que eles vão fornecer. 
+      Com esses dados sua missão será desenvolver e descrever uma persona que resuma os problemas que enfrentam e usar a persona para buscar formas de apoiar o paciente.
+      Você usará um tom sempre positivo e motivador com o objetivo de convencer o paciente de que retomar uma vida saudável com a ajuda do profissional da nutriação é um 
+      excelente caminho."
     },
     {
       "role": "user",
@@ -51,7 +53,7 @@ def generate_response(input_text):
     }
   ],
   temperature=0.8,
-  max_tokens=1024,
+  max_tokens=2048,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
