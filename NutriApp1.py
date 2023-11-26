@@ -43,7 +43,7 @@ def generate_response(input_text):
     messages=[
       {"role": "system", "content": promptbase},
       {"role": "user", "content": input_text}])
-  resposta=completions.choices[0].message
+  resposta=response.choices[0].message
   return resposta
 
 # Função para analisar as respostas e gerar recomendações
