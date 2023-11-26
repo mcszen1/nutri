@@ -1,7 +1,8 @@
 import streamlit as st
 
 def calcular_imc(peso, altura):
-    return peso / (altura / 100) ** 2
+
+    return peso / (altura ** 2)
 
 def calcular_tmb_harris_benedict(peso, altura, idade, sexo):
     if sexo == 'Masculino':
