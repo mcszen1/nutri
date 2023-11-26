@@ -56,8 +56,8 @@ def generate_response(input_text):
   frequency_penalty=0,
   presence_penalty=0
 )
-
-  return response.choices[0].message
+  resposta=response.choices[0].message
+  return resposta
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
@@ -137,5 +137,6 @@ with st.form("user_input_form"):
         comple=str(list(reasons.items()))
         input_text=promptbase+name+str(age)+gender+profession+comple
         generate_response(input_text)
+        st.write(resposta)
 
         
