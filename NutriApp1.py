@@ -127,8 +127,8 @@ with st.form("user_input_form"):
         st.bar_chart(reasons_df.set_index('Reason'), height=400)
 
         # Apresentando a persona e as recomendações ao usuário
-        st.write("## Persona Criada:")
-        st.write(persona)
+        #st.write("## Persona Criada:")
+        #st.write(persona)
         st.write("## Recomendações:")
         st.write(recommendations)
         comple=str(list(reasons.items()))
