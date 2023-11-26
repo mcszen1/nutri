@@ -43,6 +43,7 @@ def generate_response(input_text):
     messages=[
       {"role": "system", "content": promptbase},
       {"role": "user", "content": input_text}])
+  return st.write(response['choices'][0]['message']['content'])
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
