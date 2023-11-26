@@ -36,9 +36,13 @@ Inicie sempre como se estivesse contanto uma história sobre a persona usando o 
 os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 #openai_api_key=st.secrets["openai_api_key"]
 def generate_response(input_text):
-    model_name = 'gpt-3.5-turbo-16k'
-    llm = OpenAI()
-    st.info(llm(input_text))
+
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": promptbase},
+    {"role": "user", "content": input_text}]
+)
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
