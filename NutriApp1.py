@@ -24,7 +24,7 @@ Formate suas respostas usando apenas os tópicos de cada tarefa [Problema, DORES
 Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome [name] que ela indicou, bem como seus outros dados pessoais coletados.
 """
 
-openai_api_key = st.text_input('OpenAI API Key', type='password')
+#openai_api_key = st.text_input('OpenAI API Key', type='password')
 os.environ["openai_api_key"] == st.secrets["openai_api_key"]
 openai_api_key=st.secrets["openai_api_key"]
 def generate_response(input_text):
