@@ -57,7 +57,7 @@ def generate_response(input_text):
   presence_penalty=0
 )
 
-return completion.choices[0].message
+  return completion.choices[0].message
 
 # Função para analisar as respostas e gerar recomendações
 def analyze_answers(responses):
