@@ -133,7 +133,7 @@ with st.form("user_input_form"):
         st.write(recommendations)
         comple=str(list(reasons.items()))
         input_text=promptbase+name+str(age)+gender+profession+comple
-        with st.spinner("📟 Analisando sua Persona"):
+        with st.spinner("📟 Analisando sua Persona. Aguarde."):
           resposta=generate_response(input_text)
           st.write(resposta)
       
