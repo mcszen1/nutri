@@ -38,7 +38,7 @@ resposta=""
 def generate_response(input_text):
 
   response = client.chat.completions.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-4-1106-preview",
   messages=[
     {
       "role": "system",
