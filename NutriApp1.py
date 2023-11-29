@@ -25,7 +25,7 @@ b) Descrição dos fatores que incomodam a persona em função dos problemas que
 na sua resposta nesta tarefa, considere os pesos diferentes e desenvolve seus arguementos proprocionalmente a maior ou menor importância que os valores indicados de 1 a 5 vão mostrar; 
 c) o OBJETIVOs da persona diante do problema 
 d) possíveis gatilhos que dispararam na persona a vontade de buscar uma solução 
-e) uma lista detlhada de possíveis procedimentos para que a pessoa possa enfrentar e minimizar cada um dos os problemas que relatou em [comple]
+e) Faça uma lista detalhada de possíveis procedimentos para que a pessoa possa enfrentar e minimizar cada um dos os problemas que relatou em [comple]. Liste em formato tabular, indicando Estratégias para aumentar o comprometimento pessoal.
 f) os benefícios que a persona busca na solução que procura também indicando os ganhos a vitória sobre cada uma das dificuldades trará para ela
 Formate suas respostas usando apenas os tópicos de cada tarefa [PROBLEMAS, DORES, OBJETIVOS, GATILHOS, PROCEDIMENTOS PARA AJUDAR, BENEFÍCIOS]. 
 Inicie sempre como se estivesse contanto uma história sobre a persona usando o nome [name] que ela indicou, bem como seus outros dados pessoais coletados.
