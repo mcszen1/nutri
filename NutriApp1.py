@@ -14,10 +14,10 @@ promptbase="""
 No marketing digital, o conceito de "persona" refere-se a uma representação fictícia do público-alvo de uma empresa ou marca ou serviço. 
 Uma persona é criada com base em informações demográficas, comportamentais, psicográficas e outras características relevantes que descrevem um segmento específico do público que a empresa deseja atingir. 
 A criação de personas ajuda as empresas a entenderem melhor quem são seus potenciais clientes e como podem direcionar suas estratégias de marketing de maneira mais eficaz.
-Você é um nutricionista e quer conhecer melhor seus possíveis novos pacientes através de alguns dados que eles vão fornecer e que vou descrever a seguir.
-Você vai realizar uma lista de tarefas que vou descrever abaixo em indiretamente , em todas vai sempre incentiver e destacar a importância do acompanhamento do profissional nutricionista nas atividades.
-A partir desses dados você terá informações básicas como nome [name] , idade [age], gênero [gender] e profissão [profession]. Além disso você terá também uma lista com os principais fatores que tem levado 
-estes pacientes a abandonarem o acompanhamento nutricional cada um com um nível de importãncia descritos em [comple] . 
+Você é um nutricionista especializado em acompanhamento nutricional e técnicas para ajudar pessoas a encontrar uma vida mais saudável a partir da alimentação correta.
+Você vai realizar uma lista de tarefas que vou descrever abaixo e em todas vai sempre incentiver e destacar a importância do acompanhamento do profissional nutricionista nas atividades.
+Vou fornecer dados e com eles você terá informações básicas como nome [name] , idade [age], gênero [gender] e profissão [profession]. Além disso você terá também uma lista com os principais fatores que tem levado 
+estes pacientes a abandonarem o acompanhamento nutricional cada um com um nível de importãncia descritos em [comple] . Foque sua respostas nos fatores com niveis acima de 2.
 Com esse material deve definir os seguintes itens e apresentá-los no formato de um relatório indicando os tópicos. Use no nome informado para se referir à persona e os outros dados para criá-la com mais
 precisão de forma a que o paciente que forneceu os dados se sinta representado por ela: 
 a) Definição do problema que a persona tem a partir dos fatores indicados em [comple], considerando os indices númericos para definição dos mais importantes;
@@ -42,7 +42,7 @@ def generate_response(input_text):
   messages=[
     {
       "role": "system",
-      "content": "Você é um nutricionista e vai analisar seus novos pacientes através de alguns dados que eles vão fornecer. Com esses dados sua missão será desenvolver e descrever uma persona que resuma os problemas que enfrentam e usar a persona para buscar formas de apoiar o paciente.Você usará um tom sempre positivo e motivador com o objetivo de convencer o paciente de que retomar uma vida saudável com a ajuda do profissional da nutriação é um excelente caminho."
+      "content": "Você é um nutricionista e vai analisar seus novos pacientes através de alguns dados que eles vão fornecer. Adapte suas respostas considerando a informação da idade já que esse é um fator importante para oferecer respostas personalizadas. Com esses dados sua missão será desenvolver e descrever uma persona que resuma os problemas que enfrentam e usar a persona para buscar formas de apoiar o paciente.Você usará um tom sempre positivo e motivador com o objetivo de convencer o paciente de que retomar uma vida saudável com a ajuda do profissional da nutriação é um excelente caminho."
     },
     {
       "role": "user",
