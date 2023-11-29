@@ -136,4 +136,10 @@ with st.form("user_input_form"):
         with st.spinner("📟 Analisando sua Persona. Aguarde."):
           resposta=generate_response(input_text)
           st.write(resposta)
-      
+ 
+          # URL que você quer que o usuário seja redirecionado
+          url = 'https://forms.gle/6dQ2TR1iywi9U5hL9'
+          
+          # Criar um botão com um link que abre em uma nova aba
+          st.markdown(f'<a href="{url}" target="_blank">Quero continuar esse atendimento</a>', unsafe_allow_html=True)
+           
