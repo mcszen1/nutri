@@ -136,6 +136,4 @@ with st.form("user_input_form"):
         with st.spinner("📟 Analisando sua Persona"):
           resposta=generate_response(input_text)
           st.write(resposta)
-        else:  
-          st.write("Estou com sobrecarga de solicitações. Tente mais tarde.)   
-        
+      
