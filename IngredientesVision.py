@@ -37,7 +37,7 @@ def analyze_image_with_openai(image):
                 ],
             }
         ],
-        max_tokens=700,
+        max_tokens=800,
     )
     description_content = response.choices[0].message.content
     print(description_content)
