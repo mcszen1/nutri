@@ -1,3 +1,5 @@
+import streamlit as st
+
 def calcular_tmb(peso, altura, idade, sexo):
     if sexo == 'Homem':
         return 88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)
