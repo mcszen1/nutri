@@ -66,9 +66,11 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
-                st.spinner('Analisando sua imagem ... Aguarde !')
                             
-                # Display the description and translated text
+                # Display the description and translated text 
+                
+                st.spinner('Analisando sua imagem ... Aguarde !')                               
+
                 st.write("Sugestão: ", description)
         
                 
