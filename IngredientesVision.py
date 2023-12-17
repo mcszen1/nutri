@@ -32,7 +32,7 @@ def analyze_image_with_openai(image):
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "Identifique alimentos e ingredientes nesta imagem e sugira uma receita para utilizá-los"},
+                    {"type": "text", "text": "Identifique alimentos e ingredientes nesta imagem e sugira uma receita para utilizá-los, detalhando seu preparo."},
                     {"type": "image_url", "image_url": image},
                 ],
             }
