@@ -47,7 +47,7 @@ nivel_atividade = st.selectbox('Nível de Atividade Física',
 objetivo = st.selectbox('Objetivo', ['Perder Peso', 'Manter Peso', 'Ganhar Massa'])
 lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
 
-formula_tmb = st.selectbox('Fórmula para TMB', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
+formula_tmb = st.selectbox('Fórmula para TMB - Importante: para Cunningham ou Tinsley é preciso inserir a Massa Corporal Magra', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
 
 if st.button('Calcular'):
     imc = calcular_imc(peso, altura)
