@@ -95,5 +95,6 @@ def main():
                 # Display the description and translated text
                 st.write("Sugestão: ", description)
           
-                
+ if __name__ == '__main__':
+    main()               
                
