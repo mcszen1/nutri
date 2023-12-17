@@ -15,6 +15,8 @@ def calcular_macronutrientes(calorias_diarias):
     }
 
 # Interface Streamlit
+st.image("logonutri2.jpg",use_column_width="False")
+st.title('Aplicativo de Avaliação Nutricional')
 st.title('Calculadora de Macronutrientes')
 
 # Inputs do usuário
