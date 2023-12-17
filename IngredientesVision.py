@@ -1,4 +1,4 @@
-import base64
+⁸import base64
 import streamlit as st
 import os
 import tempfile
@@ -67,9 +67,7 @@ def main():
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
                             
-                # Display the description and translated text 
-                
-                st.spinner('Analisando sua imagem ... Aguarde !')                               
+                # Display the description                        
 
                 st.write("Sugestão: ", description)
         
