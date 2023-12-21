@@ -46,9 +46,9 @@ nivel_atividade = st.selectbox('Nível de Atividade Física',
                                ['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito Ativo'])
 objetivo = st.selectbox('Objetivo', ['Perder Peso', 'Manter Peso', 'Ganhar Massa'])
 lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
-pc=st.slider('Carboidratos', 0.1, 0.9, 0.1)
-pp=st.slider('Proteinas', 0.1, 0.9, 0.1)
-pg=st.slider('Gorduras', 0.1, 0.9, 0.1)
+pc=st.slider('Carboidratos', 0.1, 0.9, 0.5, 0.10)
+pp=st.slider('Proteinas', 0.1, 0.9, 0.3, 0.10)
+pg=st.slider('Gorduras', 0.1, 0.9, 0.2, 0.10)
 
 formula_tmb = st.selectbox('Fórmula para TMB - Importante: para Cunningham ou Tinsley é preciso inserir a Massa Corporal Magra', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
 
