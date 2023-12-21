@@ -31,9 +31,9 @@ def calcular_necessidades_caloricas(tmb, nivel_atividade):
 def calcular_macronutrientes(calorias_diarias):
     # Exemplo de distribuição: 50% carboidratos, 30% proteínas, 20% gorduras
     return {
-        'Carboidratos': (calorias_diarias * 0.50) / 4,
-        'Proteínas': (calorias_diarias * 0.30) / 4,
-        'Gorduras': (calorias_diarias * 0.20) / 9
+        'Carboidratos': (calorias_diarias * pc) / 4,
+        'Proteínas': (calorias_diarias * pp) / 4,
+        'Gorduras': (calorias_diarias * pg) / 9
     }
 st.image("logonutri2.jpg",use_column_width="False")
 st.title('Aplicativo de Avaliação Nutricional')
@@ -46,6 +46,9 @@ nivel_atividade = st.selectbox('Nível de Atividade Física',
                                ['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito Ativo'])
 objetivo = st.selectbox('Objetivo', ['Perder Peso', 'Manter Peso', 'Ganhar Massa'])
 lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
+pc=st.slider('Carboidratos', 0.1, 0.9, 0.1)
+pp=st.slider('Proteinas', 0.1, 0.9, 0.1)
+pg=st.slider('Gorduras', 0.1, 0.9, 0.1)
 
 formula_tmb = st.selectbox('Fórmula para TMB - Importante: para Cunningham ou Tinsley é preciso inserir a Massa Corporal Magra', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
 
