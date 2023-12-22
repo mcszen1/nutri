@@ -43,7 +43,7 @@ altura = st.number_input('Altura (cm)', min_value=0.0, format="%.2f")
 idade = st.number_input('Idade', min_value=0, max_value=120, step=1)
 sexo = st.selectbox('Sexo', ['Masculino', 'Feminino'])
 nivel_atividade = st.selectbox('Nível de Atividade Física', 
-                               ['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito Ativo'])
+                               ['Sedentário - 1.2', 'Leve - 1.3', 'Moderado - 1.5', 'Ativo - 1.7', 'Muito Ativo - 1.9'])
 objetivo = st.selectbox('Objetivo', ['Perder Peso', 'Manter Peso', 'Ganhar Massa'])
 lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
 pc=st.slider('Carboidratos', 0.1, 0.9, 0.5, 0.10)
@@ -65,7 +65,7 @@ if st.button('Calcular'):
             tmb = calcular_tmb_cunningham(lean_body_mass)
         else:
             tmb = calcular_tmb_tinsley(lean_body_mass)
-    fatores_atividade = {'Sedentário': 1.20, 'Leve': 1.30, 'Moderado': 1.50, 'Ativo': 1.70, 'Muito Ativo': 1.90}
+    fatores_atividade = {'Sedentário - 1.2': 1.20, 'Leve - 1.3': 1.30, 'Moderado - 1.5': 1.50, 'Ativo - 1.7': 1.70, 'Muito Ativo - 1.9': 1.90}
     calorias_manutencao = tmb * fatores_atividade[nivel_atividade]
     calorias_diarias= calorias_manutencao + ds
    
