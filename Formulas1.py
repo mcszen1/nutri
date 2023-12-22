@@ -65,7 +65,7 @@ if st.button('Calcular'):
             tmb = calcular_tmb_cunningham(lean_body_mass)
         else:
             tmb = calcular_tmb_tinsley(lean_body_mass)
-    fatores_atividade = {'Sedentário': 1.20, 'Leve': 1.30, 'Moderado': 1.50, 'Ativo': 1.70, 'Muito Ativo': 1.90}
+    fatores_atividade = {'Sedentário - 1.20': 1.20, 'Leve - 1.30': 1.30, 'Moderado - 1.50': 1.50, 'Ativo - 1.70': 1.70, 'Muito Ativo - 1.90': 1.90}
     calorias_manutencao = tmb * fatores_atividade[nivel_atividade]
     # Ajustando pelas metas
     if objetivo == 'Perder Peso':
