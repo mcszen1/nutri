@@ -49,7 +49,7 @@ lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, for
 pc=st.slider('Carboidratos', 0.1, 0.9, 0.5, 0.10)
 pp=st.slider('Proteinas', 0.1, 0.9, 0.3, 0.10)
 pg=st.slider('Gorduras', 0.1, 0.9, 0.2, 0.10)
-
+ds=st.slider('Déficit/Superávit Calórico', -1000, 1000, 0, 50)
 formula_tmb = st.selectbox('Fórmula para TMB - Importante: para Cunningham ou Tinsley é preciso inserir a Massa Corporal Magra', ['Harris-Benedict', 'Mifflin-St Jeor', 'Cunningham', 'Tinsley'])
 
 if st.button('Calcular'):
@@ -67,14 +67,8 @@ if st.button('Calcular'):
             tmb = calcular_tmb_tinsley(lean_body_mass)
     fatores_atividade = {'Sedentário': 1.20, 'Leve': 1.30, 'Moderado': 1.50, 'Ativo': 1.70, 'Muito Ativo': 1.90}
     calorias_manutencao = tmb * fatores_atividade[nivel_atividade]
-    # Ajustando pelas metas
-    if objetivo == 'Perder Peso':
-        calorias_diarias = calorias_manutencao - 500
-    elif objetivo == 'Ganhar Massa':
-        calorias_diarias = calorias_manutencao + 500
-    else:
-        calorias_diarias = calorias_manutencao
-
+    calorias_diarias= calorias_manutencao + ds
+   
     # Calculando macronutrientes
     macronutrientes = calcular_macronutrientes(calorias_diarias)
     st.write(f"IMC: {imc:.2f}")
