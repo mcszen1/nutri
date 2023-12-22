@@ -74,7 +74,7 @@ if st.button('Calcular'):
     st.write(f"IMC: {imc:.2f}")
     st.write(f"TMB: {tmb:.2f}")
     st.write(f"Calorias para Manutenção: {calorias_manutencao:.2f} kcal")
-    st.write(f"Objetivo: {objetivo}"
+    st.write(f"Objetivo: {objetivo}")
     st.write(f"Calorias Diárias (com base no objetivo): {calorias_diarias:.2f} kcal")
     st.write("Distribuição de Macronutrientes:")
     st.write(f"Carboidratos: {macronutrientes['Carboidratos']:.2f}g")
