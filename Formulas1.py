@@ -43,7 +43,7 @@ altura = st.number_input('Altura (cm)', min_value=0.0, format="%.2f")
 idade = st.number_input('Idade', min_value=0, max_value=120, step=1)
 sexo = st.selectbox('Sexo', ['Masculino', 'Feminino'])
 #nivel_atividade = st.selectbox('Nível de Atividade Física', 
-                               ['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito Ativo'])
+                               #['Sedentário', 'Leve', 'Moderado', 'Ativo', 'Muito Ativo'])
 #objetivo = st.selectbox('Objetivo', ['Perder Peso', 'Manter Peso', 'Ganhar Massa'])
 lean_body_mass = st.number_input('Massa Corporal Magra (kg)', min_value=0.0, format="%.2f")
 pc=st.slider('Carboidratos', 0.1, 0.9, 0.5, 0.10)
